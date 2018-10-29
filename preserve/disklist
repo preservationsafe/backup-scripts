@@ -1,0 +1,11 @@
+localhost /mnt/nfs/preserve/dsk05 gnutar
+localhost /mnt/nfs/sequoia gnutar
+localhost /mnt/nfs/ftdca gnutar
+localhost /mnt/nfs/afghan gnutar
+localhost /mnt/nfs/preserve/dsk04 gnutar
+localhost /mnt/nfs/preserve/dsk01 gnutar
+localhost /mnt/nfs/preserve/dsk07 gnutar
+localhost /mnt/nfs/preserve/dsk03 gnutar
+localhost /mnt/nfs/preserve/dsk02 gnutar
+localhost /mnt/nfs/preserve/dsk06 gnutar
+localhost /mnt/nfs/preserve/dsk08 gnutar

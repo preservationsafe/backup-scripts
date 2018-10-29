@@ -1,2 +1,2 @@
-# backup-scripts
-Handy backup scripts
+# amanda-setup
+Setup configuration and scripts used by the amanda local secondary backup system
