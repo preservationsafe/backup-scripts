@@ -236,8 +236,9 @@ foreach my $DIRPATH ( split ( ' ', $DIRLIST ) ) {
     `touch $LOGFILE`;
     `ln -sf $LOGFILE $LOGDIR/upload-latest.log`; 
 
-    # Change $DATETIME from Y-M-D.H.M.S to Y-M-D H.M.S
-    $DATETIME =~ s/\./ /;
+    # $DATE_TIME contains Y-M-D H.M.S instead of Y-M-D.H.M.S  
+    my $DATE_TIME =~ $DATETIME;
+    $DATE_TIME =~ s/\./ /;
 
     open( my $OFFSITE_APPEND_FH, ">> $OFFSITE_LATEST") || die "ERROR: could not append to file $OFFSITE_LATEST: $!";
 
@@ -253,7 +254,7 @@ foreach my $DIRPATH ( split ( ' ', $DIRLIST ) ) {
             foreach my $DIRPATH ( grep { 0 == index( $_, $UPLOAD_DIRPATH ) } @NEW_DIRPATH_DIRS ) {
                 foreach my $FILE ( @{$NEW_DIRPATH_FILES{ $DIRPATH }} ) {
                      my $NOSLASH_PATH = substr( $FILE, 1 );
-                     print $OFFSITE_APPEND_FH "$DATETIME    0.0 SIZE $NOSLASH_PATH\n";
+                     print $OFFSITE_APPEND_FH "$DATE_TIME    0.0 SIZE $NOSLASH_PATH\n";
                 }
             }
         }
@@ -276,7 +277,7 @@ foreach my $DIRPATH ( split ( ' ', $DIRLIST ) ) {
             my $UPLOAD_SUCCESS = $?;
             if ($UPLOAD_SUCCESS == 0) {
                 my $NOSLASH_PATH = substr( $UPLOAD_PATH, 1 );
-                `echo "$DATETIME    0.0 SIZE $NOSLASH_PATH" >> $OFFSITE_LATEST 2>&1`;
+                `echo "$DATE_TIME    0.0 SIZE $NOSLASH_PATH" >> $OFFSITE_LATEST 2>&1`;
             }
             else {
                 &log_upload_err( $UPLOAD_SUCCESS, $UPLOAD_PATH );
