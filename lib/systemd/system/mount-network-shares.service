@@ -1,9 +1,9 @@
 [Unit]
 Description=Mount remote shares needed by docker services
 Documentation=https://www.freedesktop.org/software/systemd/man/systemd.unit.html
-After=network-online.target firewalld.service nfs-client.target resolvconf.service
+After=network-online.target resolvconf.service remote-fs.target
 Before=docker.socket
-BindsTo=network-online.target resolveconf.service
+BindsTo=network-online.target remote-fs.target
 
 [Service]
 Type=oneshot

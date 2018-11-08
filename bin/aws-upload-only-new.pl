@@ -14,7 +14,7 @@ my $DEBUG=0;
 # Logging variables
 chomp (my $DATETIME=`date +%Y-%m-%d.%H.%M.%S`);
 my $LOGDIR="/var/log/continuity/sync-wasabi";
-my $LOGFILE="$LOGDIR/upload-$DATETIME.log";
+my $LOGFILE="$LOGDIR/aws-upload-only-new-$DATETIME.log";
 my $OFFSITE_DUMP="$LOGDIR/offsite";
 my $LOCAL_DUMP="$LOGDIR/local";
 

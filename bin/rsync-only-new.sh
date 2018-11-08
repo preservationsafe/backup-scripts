@@ -14,6 +14,7 @@ ITEMIZE="--itemize_changes"
 
 SHARE_LIST="\
 ftdca \
+pres-prd-remote-aipstor \
 preservation-prd-archive \
 preserve \
 textmining"

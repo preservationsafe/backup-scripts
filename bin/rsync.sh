@@ -21,7 +21,7 @@ ln -sf $LOGFILE $LOGBASE.log
 for SHARE in $SHARE_LIST; do
   echo "SAFE_SYNC $SHARE" >> $LOGFILE
   #/usr/bin/time -o $LOGFILE -a cp -van "$SRC_DIR/$SHARE" "$DST_DIR" >> $LOGFILE 2>&1
-  /usr/bin/time -o $LOGFILE -a rsync $DEBUG $CHECKSUM -arvh --chown=root:disk --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r --stats "$SRC_DIR/$SHARE" "$DST_DIR" >> $LOGFILE 2>&1
+  /usr/bin/time -o $LOGFILE -a rsync $DEBUG $CHECKSUM -arvh --delete-before --chown=root:disk --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r --stats "$SRC_DIR/$SHARE" "$DST_DIR" >> $LOGFILE 2>&1
 done
 
 # Ensure the amandabackup group has read access to all the files
