@@ -235,7 +235,7 @@ if ( $DEBUG ) { print "UPLOAD_DIR: ".join( "\nUPLOAD_DIR: ", @UPLOAD_DIRS )."\n"
 next if ( $DEBUG );
 
 `touch $LOGFILE`;
-`ln -sf $LOGFILE $LOGDIR/upload-latest.log`; 
+`ln -sf $LOGFILE $LOGDIR/aws-upload-only-new-latest.log`; 
 
     # $DATE_TIME contains Y-M-D H.M.S instead of Y-M-D.H.M.S  
     my $DATE_TIME = $DATETIME;

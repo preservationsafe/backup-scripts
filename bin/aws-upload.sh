@@ -33,7 +33,7 @@ LOGFILE=aws-upload-$DATETIME.log
 cd /var/log/continuity/sync-wasabi
 
 touch $LOGFILE
-ln -sf $LOGFILE sync-latest.log
+ln -sf $LOGFILE aws-upload-latest.log
 
 for DIRPATH in $DIRLIST; do
   /usr/bin/time -a -o $LOGFILE aws $PROFILE --color auto s3 sync /$DIRPATH/ s3://$BUCKET/$DIRPATH --no-progress > $LOGFILE 2>&1
