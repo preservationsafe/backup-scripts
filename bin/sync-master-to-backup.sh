@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUNFILE="/var/log/continuity/preservation-continuity/sync-master-to-backup.run"
+RUNFILE="/var/log/continuity/sync-onsite/sync-master-to-backup.run"
 
 if [ -f "$RUNFILE" ]; then
   date >> "$RUNFILE"

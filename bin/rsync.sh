@@ -5,7 +5,7 @@ DST_DIR="/preservation-continuity"
 ROGROUP=amandabackup
 
 DATETIME=`date +%Y-%m-%d.%H.%M.%S`
-LOGBASE="/var/log/continuity/preservation-continuity/rsync-preservation-continuity"
+LOGBASE="/var/log/continuity/sync-onsite/rsync-preservation-continuity"
 LOGFILE="$LOGBASE-$DATETIME.log"
 
 # Note: we don't want it to do checksum to see if something should get transfered, only rely on date and filesize. We'll rely on the fixity service to notice a checksum difference.
